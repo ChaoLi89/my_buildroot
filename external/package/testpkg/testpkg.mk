@@ -11,6 +11,14 @@
 # PKG_DEPENDENCIES = libopenssl libevent qt
 # PKG_INSTALL_STAGING = NO
 
+# Use tarball as the source
+# PKG_VERSION = 1.4.33
+# PKG_SOURCE = PKG-$(PKG_VERSION).tar.xz
+# PKG_SITE = http://download.PKG.net/PKG/releases-1.4.x
+# PKG_LICENSE = BSD-3c
+# PKG_LICENSE_FILES = COPYING
+# PKG_DEPENDENCIES = host-pkgconf
+
 $(info test message)
 $(info TARGET_CROSS is $(TARGET_CROSS))
 $(info TARGET_CC is $(TARGET_CC))
