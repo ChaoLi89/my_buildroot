@@ -1,4 +1,16 @@
 
+# Use git as source of source code
+# PKG_VERSION = ChaoL/T2x_upgrade           
+# PKG_SITE = ssh://ggltfs.local.gallagher.io:22/tfs/Gallagher/CardaxFT/_git/HBusDevices
+# PKG_SITE_METHOD = git
+# PKG_INSTALL_STAGING = NO
+
+# Use local directory as source
+# PKG_SITE = /home/chao/work/HBusDevices-2
+# PKG_SITE_METHOD = local
+# PKG_DEPENDENCIES = libopenssl libevent qt
+# PKG_INSTALL_STAGING = NO
+
 $(info test message)
 $(info TARGET_CROSS is $(TARGET_CROSS))
 $(info TARGET_CC is $(TARGET_CC))
