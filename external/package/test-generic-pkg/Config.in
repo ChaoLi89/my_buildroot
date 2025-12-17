@@ -1,0 +1,5 @@
+config BR2_PACKAGE_TEST_GENERIC_PKG
+	bool "test  generic package"
+	help
+	  A generic package to do experiments on
+

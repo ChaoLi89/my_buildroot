@@ -1,0 +1,5 @@
+config BR2_PACKAGE_TEST_CMAKE_PKG
+	bool "test cmake package"
+	help
+	  A cmake package to do experiments on
+
