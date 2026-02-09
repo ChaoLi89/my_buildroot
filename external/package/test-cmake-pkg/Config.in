@@ -3,3 +3,7 @@ config BR2_PACKAGE_TEST_CMAKE_PKG
 	help
 	  A cmake package to do experiments on
 
+config BR2_PACKAGE_HOST_TEST_CMAKE_PKG
+	bool "host test cmake package"
+	help
+	  A cmake package to do experiments on

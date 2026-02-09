@@ -1,3 +1,4 @@
 
 source "$BR2_EXTERNAL_NETRADAR_PATH/package/test-generic-pkg/Config.in"
 source "$BR2_EXTERNAL_NETRADAR_PATH/package/test-cmake-pkg/Config.in"
+source "$BR2_EXTERNAL_NETRADAR_PATH/package/test-cmake-subdir-pkg/Config.in"

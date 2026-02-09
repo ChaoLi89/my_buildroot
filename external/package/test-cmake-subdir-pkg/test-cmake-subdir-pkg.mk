@@ -20,12 +20,12 @@
 # PKG_DEPENDENCIES = host-pkgconf
 
 # Use local directory as source
-TEST_CMAKE_PKG_SITE = $(EXTERNAL_NETRADAR_SOURCE_PATH)/test-cmake
-TEST_CMAKE_PKG_SITE_METHOD = local
+TEST_CMAKE_SUBDIR_PKG_SITE = $(EXTERNAL_NETRADAR_SOURCE_PATH)/test-subdir
+TEST_CMAKE_SUBDIR_PKG_SITE_METHOD = local
 # TEST_CMAKE_PKG_DEPENDENCIES =
-TEST_CMAKE_PKG_INSTALL_STAGING = NO
+TEST_CMAKE_SUBDIR_PKG_INSTALL_STAGING = NO
 
 #HOST_TEST_CMAKE_PKG_INSTALL_OPTS = --prefix /home/chao
+TEST_CMAKE_SUBDIR_PKG_SUBDIR = subdir/test-cmake-subdir/test-cmake
 
-$(eval $(cmake-package)) # use 'make test-cmake-pkg-build' to build target version
-$(eval $(host-cmake-package)) # use make host-test-cmake-pkg-build to build host version
+$(eval $(cmake-package)) # use make host-test-cmake-pkg-build to build host version
