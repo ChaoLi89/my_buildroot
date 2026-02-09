@@ -1,0 +1,9 @@
+config BR2_PACKAGE_TEST_CMAKE_SUBDIR_PKG
+	bool "test cmake package in subdirectory"
+	help
+	  A cmake package to do experiments on
+
+config BR2_PACKAGE_HOST_TEST_CMAKE_SUBDIR_PKG
+	bool "host test cmake package in subdirectory"
+	help
+	  A cmake package to do experiments on

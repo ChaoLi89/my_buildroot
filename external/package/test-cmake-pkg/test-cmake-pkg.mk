@@ -27,5 +27,11 @@ TEST_CMAKE_PKG_INSTALL_STAGING = NO
 
 #HOST_TEST_CMAKE_PKG_INSTALL_OPTS = --prefix /home/chao
 
+# define TEST_HOOK
+# 	$(BR2_EXTERNAL)/board/scripts/test.sh
+# endef
+
+# TEST_CMAKE_PKG_POST_INSTALL_TARGET_HOOKS += TEST_HOOK
+
 $(eval $(cmake-package)) # use 'make test-cmake-pkg-build' to build target version
 $(eval $(host-cmake-package)) # use make host-test-cmake-pkg-build to build host version

@@ -1,0 +1,5 @@
+define TEST_HOOK
+	$(BR2_EXTERNAL)/board/scripts/test.sh
+endef
+
+TEST_CMAKE_PKG_POST_INSTALL_TARGET_HOOKS += TEST_HOOK
