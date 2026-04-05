@@ -1,0 +1,45 @@
+/dts-v1/;
+
+/ {
+    description = "Kernel, Device Tree & RootFS";
+
+	images {
+        kernel {
+            description = "Linux kernel";
+            data = /incbin/("zImage");
+            type = "kernel";
+            arch = "arm";
+            os = "linux";
+            compression = "none";
+            load = <0x87800000>;
+            entry = <0x87800000>;
+        };
+        fdt {
+            description = "device tree blob";
+            data = /incbin/("mx6ull_dev.dtb");
+            type = "flat_dt";
+            arch = "arm";
+            load = <0x83000000>;
+            compression = "none";
+        };
+        ramdisk {
+            description = "Initial ram disk";
+            data = /incbin/("rootfs.cpio.lzo");
+            type = "ramdisk";
+            arch = "arm";
+            os = "linux";
+            load = <0x86800000>;
+            compression = "lzo";
+        };
+    };
+    configurations {
+        default = "config_1";
+
+        config_1 {
+            description = "imx6ull default configuration";
+            kernel = "kernel";
+            fdt = "fdt";
+            ramdisk = "ramdisk";
+        };
+    };
+};

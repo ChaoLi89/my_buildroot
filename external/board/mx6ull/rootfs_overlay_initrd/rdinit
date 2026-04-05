@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Booting from RD init"
+
+echo $factory
+
+exec /init

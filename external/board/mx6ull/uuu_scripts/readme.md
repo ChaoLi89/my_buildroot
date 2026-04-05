@@ -16,5 +16,9 @@ To download image to DDR, we can use two ways:
     This is almost same as imx6ull_fb.uuu, the difference is it use uImage format cpio so uboot can handle the cpio size.
     One can use this command to make uImage format from cpio arhieve.
     mkimage -A arm -O linux -T ramdisk -n "My Rootfs" -d rootfs.cpio rootfs.uImage
-    
+
+## mx6ull_itb.uuu:
+    This is simplest, only one image is needed, because other images are packed in to itb file and their load addresses are also itb file.
+    So u-boot will copy them automatically.
+
 I found Fastboot way is much faster than SDP way.
