@@ -9,5 +9,6 @@ SDP: boot -f u-boot-dtb.imx
 
 # download zImage
 FB: download -f mx6ull.itb
+FB: ucmd setenv bootcmd bootm 0x83800000 #with this, we can run 'boot' in uboot to boot the kernel
 FB: continue
 FB: done

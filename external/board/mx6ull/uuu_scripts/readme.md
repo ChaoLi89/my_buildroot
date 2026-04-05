@@ -22,3 +22,5 @@ To download image to DDR, we can use two ways:
     So u-boot will copy them automatically.
 
 I found Fastboot way is much faster than SDP way.
+
+After uuu and download, run 'boot' in u-boot command line to boot Linux kernel.

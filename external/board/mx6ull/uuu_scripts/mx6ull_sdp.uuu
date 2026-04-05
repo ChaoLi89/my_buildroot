@@ -18,8 +18,7 @@ FB: ucmd setenv bootargs 'console=ttymxc2,115200'
 FB: ucmd setenv kernel_addr_r 0x83800000
 FB: ucmd setenv cpio_addr_r 0x86800000
 FB: ucmd setenv fdt_addr_r 0x83000000
+FB: ucmd setenv bootz bootz ${kernel_addr_r} ${cpio_addr_r} ${fdt_addr_r} #with this, we can run 'boot' in uboot to boot the kernel
 
-# boot
-FB: ucmd bootz ${kernel_addr_r} ${cpio_addr_r} ${fdt_addr_r}
 FB: continue
 FB: done

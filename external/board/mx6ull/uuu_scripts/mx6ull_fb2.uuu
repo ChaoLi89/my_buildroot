@@ -25,6 +25,7 @@ FB: ucmd cp.b ${fastboot_buffer} ${fdt_addr_r} ${filesize}
 
 # download cpio
 FB: download -f rootfs.uImage
-FB: ucmd cp.b ${fastboot_buffer} ${cpio_addr_r} ${filesize}
+FB: ucmd cp.b ${fastboot_buffer} ${cpio_addr_r} ${filesize} 
+FB: ucmd setenv bootz ${kernel_addr_r} ${cpio_addr_r} ${fdt_addr_r} #with this, we can run 'boot' in uboot to boot the kernel
 FB: continue
 FB: done
