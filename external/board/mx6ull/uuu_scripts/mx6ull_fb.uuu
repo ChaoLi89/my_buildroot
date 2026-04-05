@@ -1,0 +1,33 @@
+uuu_version 1.2.39
+
+# This script downloads uboot, run uboot and then download other images through fastboot_boot
+
+SDP: boot -f u-boot-dtb.imx
+
+# Set variables
+FB: ucmd setenv kernel_addr_r 	0x87800000
+FB: ucmd setenv cpio_addr_r 	0x86800000
+FB: ucmd setenv fastboot_buffer 0x83800000
+FB: ucmd setenv fdt_addr_r 	0x83000000
+
+
+# download zImage
+FB: download -f zImage
+FB: ucmd cp.b ${fastboot_buffer} ${kernel_addr_r} ${filesize}
+
+# download dtb
+FB: download -f mx6ull_dev.dtb
+FB: ucmd cp.b ${fastboot_buffer} ${fdt_addr_r} ${filesize}
+
+
+# download cpio
+FB: download -f rootfs.cpio
+FB: ucmd cp.b ${fastboot_buffer} ${cpio_addr_r} ${filesize}
+FB: ucmd setenv cpio_size ${filesize}
+
+FB: continue
+FB: done
+
+# Then in uboot, run:
+# 1. setenv bootargs 'console=ttymxc2,115200'
+# 2. 'bootz ${kernel_addr_r} ${cpio_addr_r}:${cpio_size} ${fdt_addr_r}'

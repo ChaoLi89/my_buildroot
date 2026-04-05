@@ -1,0 +1,30 @@
+uuu_version 1.2.39
+
+# The download command downloads the given image to the address pointed to by CONFIG_FASTBOOT_BUF_ADDR.
+# In cx-imx8x.h, this address is saved to the env var fastboot_buffer.
+# After download command completes, env var "filesize" is set to the total size of downloaded image in hex.
+
+# download our fastboot container to ddr and boot
+SDP: boot -f u-boot-dtb.imx
+
+# Set variables
+FB: ucmd setenv kernel_addr_r 	0x87800000
+FB: ucmd setenv cpio_addr_r 	0x86800000
+FB: ucmd setenv fastboot_buffer 0x83800000
+FB: ucmd setenv fdt_addr_r 	0x83000000
+
+
+# download zImage
+FB: download -f zImage
+FB: ucmd cp.b ${fastboot_buffer} ${kernel_addr_r} ${filesize}
+
+# download dtb
+FB: download -f mx6ull_dev.dtb
+FB: ucmd cp.b ${fastboot_buffer} ${fdt_addr_r} ${filesize}
+
+
+# download cpio
+FB: download -f rootfs.uImage
+FB: ucmd cp.b ${fastboot_buffer} ${cpio_addr_r} ${filesize}
+FB: continue
+FB: done
