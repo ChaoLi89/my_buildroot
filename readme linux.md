@@ -14,4 +14,11 @@ In uuu folder, run 'uuu mx6ull_fb.uuu'
 
 uboot will run and download images.
 
-Then in uboot command line, run 'run my_boot' to boot linux.
+Then in uboot command line, run 'boot' to boot linux.
+
+## make change to linux configuration
+1. run make linux-menuconfig
+2. make changes and save
+3. make linux-update-defconfig
+
+This will update the defconfig in external/board/mx6ull/ which is specified by buildroot config BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE.
